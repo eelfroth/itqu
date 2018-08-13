@@ -1,10 +1,24 @@
-# voidscribble
+# itqu
 
-processing sketch that scribbles in a circle
-
-exports to png and svg
+voidfelt generator
 
 ![screenshot](https://raw.githubusercontent.com/eelfroth/voidscribble/master/screenshot.png)
+
+## controls
+
+`r R`  random
+
+`m M`  mesh
+
+
+`s  `  save png
+
+`e  `  export svg
+
+
+`+ -`  vertex count
+
+`. ,`  stroke weight
 
 ## build
 
