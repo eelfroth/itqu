@@ -29,15 +29,21 @@ void setup() {
     textFont(font);
 
     background(0);
-    textAlign(CENTER, BOTTOM);
-    text("loading...", width/2, height-20);
-
-    canvas = createGraphics(canvas_size, canvas_size, P2D);
-    radius = canvas_size/3;
     //println(help);
 }
 
 void draw() {
+    if(frameCount <= 1) {
+        fill(255);
+        textAlign(CENTER, BOTTOM);
+        text("loading...", width/2, height-20);
+        if(frameCount == 1) {
+            canvas = createGraphics(canvas_size, canvas_size, P2D);
+            radius = canvas_size/3;
+        }
+        return;
+    }
+
     if(keyPressed) { // continuous keypresses
         switch(key) {
             case '+':
@@ -53,6 +59,12 @@ void draw() {
     image(canvas, 0, 0, width, height);
     noTint();
 
+    fill(0);
+    stroke(0);
+    rect(18, 20, 98, 14);
+    rect(18, height-168, 130, 148);
+    rect(width-120, 20, 102, 14);
+    rect(width-80, height-72, 62, 52);
     fill(255);
     textAlign(LEFT, TOP);
     text("H     V     D", 20, 20);
